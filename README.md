@@ -40,6 +40,8 @@ pytest -q
 ## Milestone 1 Evidence
 - Requirement traceability: `docs/m1-traceability.md`
 - Architecture and design docs: `docs/`
+- Demo runbook: `docs/demo.md`
+- Optional demo script: `scripts/demo_run.sh`
 
 ## Notes
 - `.local/worklog.md` is intentionally ignored from git.
