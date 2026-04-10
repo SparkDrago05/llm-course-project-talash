@@ -27,8 +27,19 @@ This repository contains the Milestone 1 implementation for TALASH (Smart HR Rec
 - `POST /ingest` (multipart PDF)
 - `POST /process/all` (process all PDFs from `data/input`)
 - `GET /results/candidates`
+- `GET /results/report`
 
 `POST /process/all` writes linked CSV outputs in `data/output` for all extracted entities.
+
+## Tests
+Run quick checks with:
+```bash
+pytest -q
+```
+
+## Milestone 1 Evidence
+- Requirement traceability: `docs/m1-traceability.md`
+- Architecture and design docs: `docs/`
 
 ## Notes
 - `.local/worklog.md` is intentionally ignored from git.
