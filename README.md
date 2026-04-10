@@ -7,6 +7,7 @@ This repository contains the Milestone 1 implementation for TALASH (Smart HR Rec
 - Architecture, ingestion, and schema design documentation
 - Wireframe placeholders for UI flow
 - Early API prototype for upload and processing
+- Extracted entities: education, experience, skills, publications, supervision, patents, books
 
 ## Quick Start
 1. Create and activate a virtual environment.
@@ -26,6 +27,8 @@ This repository contains the Milestone 1 implementation for TALASH (Smart HR Rec
 - `POST /ingest` (multipart PDF)
 - `POST /process/all` (process all PDFs from `data/input`)
 - `GET /results/candidates`
+
+`POST /process/all` writes linked CSV outputs in `data/output` for all extracted entities.
 
 ## Notes
 - `.local/worklog.md` is intentionally ignored from git.

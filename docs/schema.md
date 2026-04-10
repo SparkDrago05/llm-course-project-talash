@@ -6,6 +6,9 @@
 - experience(candidate_id, entry)
 - skills(candidate_id, skill)
 - publications(candidate_id, entry)
+- supervision(candidate_id, entry)
+- patents(candidate_id, entry)
+- books(candidate_id, entry)
 
 ## Relationship Model
 - `candidate_id` is the join key across all tables.
@@ -17,9 +20,9 @@
 - `data/output/experience.csv`
 - `data/output/skills.csv`
 - `data/output/publications.csv`
+- `data/output/supervision.csv`
+- `data/output/patents.csv`
+- `data/output/books.csv`
 
 ## Milestone 2 Additions (Planned)
-- supervision table
-- patents table
-- books table
 - extraction metadata table (confidence, source offsets, parser version)
