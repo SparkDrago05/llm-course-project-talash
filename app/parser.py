@@ -47,6 +47,7 @@ def _best_section(line: str) -> str:
 def parse_cv(pdf_path: Path) -> dict[str, Any]:
     text = extract_text_from_pdf(pdf_path)
     lines = _find_lines(text)
+    candidate_id = pdf_path.stem.lower().replace(" ", "_")
 
     name = lines[0] if lines else "Unknown Candidate"
     email = _extract_email(text)
@@ -73,21 +74,17 @@ def parse_cv(pdf_path: Path) -> dict[str, Any]:
 
     return {
         "candidate": {
-            "candidate_id": pdf_path.stem.lower().replace(" ", "_"),
+            "candidate_id": candidate_id,
             "name": name,
             "email": email,
             "phone": phone,
             "current_title": sections["experience"][0] if sections["experience"] else "",
         },
-        "education": [{"candidate_id": pdf_path.stem, "entry": item} for item in sections["education"]],
-        "experience": [{"candidate_id": pdf_path.stem, "entry": item} for item in sections["experience"]],
-        "skills": [{"candidate_id": pdf_path.stem, "skill": item} for item in sections["skills"]],
-        "publications": [
-            {"candidate_id": pdf_path.stem, "entry": item} for item in sections["publications"]
-        ],
-        "supervision": [
-            {"candidate_id": pdf_path.stem, "entry": item} for item in sections["supervision"]
-        ],
-        "patents": [{"candidate_id": pdf_path.stem, "entry": item} for item in sections["patents"]],
-        "books": [{"candidate_id": pdf_path.stem, "entry": item} for item in sections["books"]],
+        "education": [{"candidate_id": candidate_id, "entry": item} for item in sections["education"]],
+        "experience": [{"candidate_id": candidate_id, "entry": item} for item in sections["experience"]],
+        "skills": [{"candidate_id": candidate_id, "skill": item} for item in sections["skills"]],
+        "publications": [{"candidate_id": candidate_id, "entry": item} for item in sections["publications"]],
+        "supervision": [{"candidate_id": candidate_id, "entry": item} for item in sections["supervision"]],
+        "patents": [{"candidate_id": candidate_id, "entry": item} for item in sections["patents"]],
+        "books": [{"candidate_id": candidate_id, "entry": item} for item in sections["books"]],
     }

@@ -19,3 +19,9 @@ class ProcessResponse(BaseModel):
     processed_files: int
     candidates: int
     output_files: List[str]
+
+
+class ReportResponse(BaseModel):
+    candidates: int
+    table_rows: dict[str, int]
+    completeness: dict[str, float]

@@ -1,9 +1,10 @@
 from pathlib import Path
 from fastapi import FastAPI, File, HTTPException, UploadFile
 
-from app.config import INPUT_DIR, ensure_directories
+from app.config import INPUT_DIR, OUTPUT_DIR, ensure_directories
 from app.parser import parse_cv
-from app.schemas import IngestResponse, ProcessResponse
+from app.reporting import build_preprocessing_report
+from app.schemas import IngestResponse, ProcessResponse, ReportResponse
 from app.storage import write_outputs
 
 
@@ -55,3 +56,13 @@ def results_candidates() -> dict:
 
     rows = csv_path.read_text(encoding="utf-8").splitlines()
     return {"file": str(csv_path), "rows": rows[:20]}
+
+
+@app.get("/results/report", response_model=ReportResponse)
+def results_report() -> ReportResponse:
+    csv_path = Path("data/output/candidates.csv")
+    if not csv_path.exists():
+        raise HTTPException(status_code=404, detail="Candidates output not generated yet")
+
+    report = build_preprocessing_report(OUTPUT_DIR)
+    return ReportResponse(**report)
