@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Runtime data
+*.db
+*.sqlite3
+*.log
+
+# Local-only tracking and notes
+.local/
+
+# OS/editor
+.DS_Store
+.vscode/settings.json
+.specstory/
+
+Talash.pdf
+Talash.txt
