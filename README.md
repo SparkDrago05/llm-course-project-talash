@@ -38,6 +38,24 @@ Run quick checks with:
 pytest -q
 ```
 
+Minimal syntax check:
+```bash
+python3 -m py_compile app/*.py tests/*.py
+```
+
+## Demo (Quick)
+1. Put 1-2 PDF CVs in `data/input`.
+2. Start server:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+3. In browser open: http://127.0.0.1:8000/docs
+4. Run endpoints in order:
+   - `POST /process/all`
+   - `GET /results/candidates`
+   - `GET /results/report`
+5. Show generated files under `data/output`.
+
 ## Milestone 1 Evidence
 - Requirement traceability: `docs/m1-traceability.md`
 - Architecture and design docs: `docs/`
@@ -45,8 +63,6 @@ pytest -q
 - Wireframes: `docs/wireframes/`
 - Demo runbook: `docs/demo.md`
 - Demo evidence checklist: `docs/demo-assets/README.md`
-- Handoff document: `docs/handoff-m1-to-m2.md`
-- QA checklist: `docs/m1-qa-checklist.md`
 - Optional demo script: `scripts/demo_run.sh`
 
 ## Notes
