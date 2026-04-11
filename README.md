@@ -46,6 +46,7 @@ pytest -q
 - Demo runbook: `docs/demo.md`
 - Demo evidence checklist: `docs/demo-assets/README.md`
 - Handoff document: `docs/handoff-m1-to-m2.md`
+- QA checklist: `docs/m1-qa-checklist.md`
 - Optional demo script: `scripts/demo_run.sh`
 
 ## Notes

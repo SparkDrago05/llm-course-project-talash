@@ -31,3 +31,12 @@ def test_results_report_returns_404_when_outputs_missing() -> None:
     response = client.get("/results/report")
     assert response.status_code == 404
     assert response.json()["detail"] == "Candidates output not generated yet"
+
+
+def test_ingest_rejects_non_pdf_upload() -> None:
+    response = client.post(
+        "/ingest",
+        files={"file": ("notes.txt", b"not a pdf", "text/plain")},
+    )
+    assert response.status_code == 400
+    assert response.json()["detail"] == "Only PDF files are supported"
