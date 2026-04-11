@@ -44,6 +44,8 @@ pytest -q
 - UI/UX design notes: `docs/ui-ux.md`
 - Wireframes: `docs/wireframes/`
 - Demo runbook: `docs/demo.md`
+- Demo evidence checklist: `docs/demo-assets/README.md`
+- Handoff document: `docs/handoff-m1-to-m2.md`
 - Optional demo script: `scripts/demo_run.sh`
 
 ## Notes

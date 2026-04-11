@@ -28,7 +28,8 @@
 
 4. Running demo (5 marks)
 - Evidence: API can ingest PDFs, process all CVs, and show extracted outputs and report.
-- Action pending: demo script and screenshots in docs/demo.md and docs/demo-assets/
+- Evidence: demo script and runbook in docs/demo.md and scripts/demo_run.sh
+- Evidence: screenshot checklist in docs/demo-assets/README.md
 
 ## Milestone 1 Scope Boundary
 - Included: preprocessing pipeline, architecture docs, schema design, API prototype, report endpoint.
