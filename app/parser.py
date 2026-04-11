@@ -4,6 +4,7 @@ from typing import Any
 from rapidfuzz import fuzz
 
 from app.extractor import extract_text_from_pdf
+from app.normalize import normalize_candidate_id, normalize_phone, normalize_whitespace
 
 
 SECTION_HINTS = {
@@ -18,7 +19,7 @@ SECTION_HINTS = {
 
 
 def _find_lines(text: str) -> list[str]:
-    return [line.strip() for line in text.splitlines() if line.strip()]
+    return [normalize_whitespace(line) for line in text.splitlines() if line.strip()]
 
 
 def _extract_email(text: str) -> str:
@@ -28,7 +29,7 @@ def _extract_email(text: str) -> str:
 
 def _extract_phone(text: str) -> str:
     match = re.search(r"(\+?\d[\d\-\s]{8,}\d)", text)
-    return match.group(0).strip() if match else ""
+    return normalize_phone(match.group(0)) if match else ""
 
 
 def _best_section(line: str) -> str:
@@ -47,7 +48,7 @@ def _best_section(line: str) -> str:
 def parse_cv(pdf_path: Path) -> dict[str, Any]:
     text = extract_text_from_pdf(pdf_path)
     lines = _find_lines(text)
-    candidate_id = pdf_path.stem.lower().replace(" ", "_")
+    candidate_id = normalize_candidate_id(pdf_path.stem)
 
     name = lines[0] if lines else "Unknown Candidate"
     email = _extract_email(text)
