@@ -30,6 +30,7 @@ This repository contains the Milestone 1 implementation for TALASH (Smart HR Rec
 - `GET /results/report`
 
 `POST /process/all` writes linked CSV outputs in `data/output` for all extracted entities.
+If some PDFs fail to parse, the endpoint still processes valid files and returns `failed_files`.
 
 ## Tests
 Run quick checks with:

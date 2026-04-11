@@ -2,7 +2,7 @@ from pathlib import Path
 from fastapi import FastAPI, File, HTTPException, UploadFile
 
 from app.config import INPUT_DIR, OUTPUT_DIR, ensure_directories
-from app.parser import parse_cv
+from app.processor import process_pdf_batch
 from app.reporting import build_preprocessing_report
 from app.schemas import IngestResponse, ProcessResponse, ReportResponse
 from app.storage import write_outputs
@@ -38,13 +38,17 @@ def process_all() -> ProcessResponse:
     if not pdfs:
         raise HTTPException(status_code=400, detail="No PDFs found in data/input")
 
-    records = [parse_cv(pdf_path) for pdf_path in pdfs]
-    output_files = write_outputs(records)
+    batch_result = process_pdf_batch(pdfs)
+    if not batch_result.records:
+        raise HTTPException(status_code=400, detail="All PDFs failed to parse")
+
+    output_files = write_outputs(batch_result.records)
 
     return ProcessResponse(
         processed_files=len(pdfs),
-        candidates=len(records),
+        candidates=len(batch_result.records),
         output_files=output_files,
+        failed_files=batch_result.failed_files,
     )
 
 

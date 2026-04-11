@@ -19,6 +19,7 @@ class ProcessResponse(BaseModel):
     processed_files: int
     candidates: int
     output_files: List[str]
+    failed_files: List[str]
 
 
 class ReportResponse(BaseModel):
