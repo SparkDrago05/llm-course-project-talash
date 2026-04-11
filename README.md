@@ -40,6 +40,8 @@ pytest -q
 ## Milestone 1 Evidence
 - Requirement traceability: `docs/m1-traceability.md`
 - Architecture and design docs: `docs/`
+- UI/UX design notes: `docs/ui-ux.md`
+- Wireframes: `docs/wireframes/`
 - Demo runbook: `docs/demo.md`
 - Optional demo script: `scripts/demo_run.sh`
 

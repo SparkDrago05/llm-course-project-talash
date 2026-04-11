@@ -1,8 +1,8 @@
 # Wireframes Placeholder
 
-Create and export three screens here:
-1. Upload View
-2. Candidate Summary Dashboard
-3. Candidate Detail View
+Exported screens:
+1. upload-view.svg
+2. candidate-summary-dashboard.svg
+3. candidate-detail-view.svg
 
-For Milestone 1 grading, export PNG or PDF snapshots and keep references in this folder.
+These low-fidelity wireframes are ready for Milestone 1 UI/UX evidence.

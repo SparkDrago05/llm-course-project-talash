@@ -10,7 +10,10 @@
 
 2. UI/UX wireframes and design thinking (4 marks)
 - Evidence: docs/wireframes/README.md
-- Action pending: add exported wireframe images in docs/wireframes/
+- Evidence: docs/wireframes/upload-view.svg
+- Evidence: docs/wireframes/candidate-summary-dashboard.svg
+- Evidence: docs/wireframes/candidate-detail-view.svg
+- Evidence: docs/ui-ux.md
 
 3. Preprocessing module plus early prototype (12 marks)
 - Evidence: app/extractor.py (PDF extraction with fallback)

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#f1f5f9"/>
+  <rect x="40" y="30" width="1200" height="90" rx="12" fill="#0f172a"/>
+  <text x="80" y="86" font-family="Arial" font-size="30" fill="#e2e8f0">Candidate Detail</text>
+
+  <rect x="40" y="145" width="360" height="530" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="70" y="190" font-family="Arial" font-size="24" fill="#334155">Profile Snapshot</text>
+  <text x="70" y="235" font-family="Arial" font-size="18" fill="#475569">Name: Example Candidate</text>
+  <text x="70" y="270" font-family="Arial" font-size="18" fill="#475569">Email: candidate@uni.edu</text>
+  <text x="70" y="305" font-family="Arial" font-size="18" fill="#475569">Phone: +92-300-0000000</text>
+  <text x="70" y="340" font-family="Arial" font-size="18" fill="#475569">Current Role: Lecturer</text>
+
+  <rect x="430" y="145" width="810" height="250" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="460" y="190" font-family="Arial" font-size="24" fill="#334155">Extracted Sections</text>
+  <text x="460" y="235" font-family="Arial" font-size="18" fill="#475569">Education, Experience, Skills, Publications</text>
+  <text x="460" y="270" font-family="Arial" font-size="18" fill="#475569">Supervision, Patents, Books</text>
+
+  <rect x="430" y="425" width="390" height="250" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="460" y="470" font-family="Arial" font-size="22" fill="#334155">Missing Info Flags</text>
+  <text x="460" y="515" font-family="Arial" font-size="18" fill="#475569">- No patent ID listed</text>
+  <text x="460" y="550" font-family="Arial" font-size="18" fill="#475569">- Conference rank unknown</text>
+
+  <rect x="850" y="425" width="390" height="250" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="880" y="470" font-family="Arial" font-size="22" fill="#334155">Email Draft Preview</text>
+  <text x="880" y="515" font-family="Arial" font-size="18" fill="#475569">Dear Candidate,</text>
+  <text x="880" y="545" font-family="Arial" font-size="18" fill="#475569">Please share missing details...</text>
+</svg>

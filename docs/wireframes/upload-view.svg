@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#f8fafc"/>
+  <rect x="40" y="30" width="1200" height="70" rx="10" fill="#0f172a"/>
+  <text x="70" y="75" font-family="Arial" font-size="28" fill="#e2e8f0">TALASH - CV Upload</text>
+
+  <rect x="80" y="140" width="1120" height="500" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="120" y="205" font-family="Arial" font-size="30" fill="#0f172a">Drop CV PDFs or click to upload</text>
+  <rect x="120" y="240" width="1040" height="250" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="10 8" stroke-width="3"/>
+  <text x="470" y="370" font-family="Arial" font-size="26" fill="#334155">Drag &amp; Drop Zone</text>
+
+  <rect x="120" y="525" width="240" height="70" rx="10" fill="#0ea5e9"/>
+  <text x="165" y="568" font-family="Arial" font-size="24" fill="#ffffff">Start Ingestion</text>
+  <rect x="390" y="525" width="240" height="70" rx="10" fill="#334155"/>
+  <text x="460" y="568" font-family="Arial" font-size="24" fill="#ffffff">View Queue</text>
+</svg>
