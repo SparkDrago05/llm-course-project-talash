@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-*/
 .pytest_cache/
 .ruff_cache/
 
@@ -17,6 +18,10 @@ __pycache__/
 .DS_Store
 .vscode/settings.json
 .specstory/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
 
 Talash.pdf
 Talash.txt

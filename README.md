@@ -1,13 +1,16 @@
-# TALASH - Milestone 1 Prototype
+# TALASH - Milestone 2 (Intermediate)
 
-This repository contains the Milestone 1 implementation for TALASH (Smart HR Recruitment) for CS417 LLMs.
+This repository contains the Milestone 2 implementation for TALASH (Smart HR Recruitment) for CS417 LLMs.
 
-## Scope Covered (Milestone 1)
-- Preprocessing module: PDF CV ingestion and structured extraction
-- Architecture, ingestion, and schema design documentation
-- Wireframe placeholders for UI flow
-- Early API prototype for upload and processing
-- Extracted entities: education, experience, skills, publications, supervision, patents, books
+## Scope Covered (Milestone 2)
+- Multi-CV PDF ingestion pipeline (folder + upload)
+- Raw text extraction and storage per candidate
+- Structured extraction for personal info, education, experience, skills, and publications
+- Educational profile and professional timeline analysis
+- Missing-information detection + personalized email draft generation
+- Initial candidate summary generation
+- Partial research profile (title extraction, count, basic type classification)
+- Intermediate web UI (upload, candidate table, basic charts)
 
 ## Quick Start
 1. Create and activate a virtual environment.
@@ -22,15 +25,23 @@ This repository contains the Milestone 1 implementation for TALASH (Smart HR Rec
 4. Open docs:
    - Swagger: http://127.0.0.1:8000/docs
 
-## API Endpoints
+## Backend API Endpoints
 - `GET /health`
+
+Milestone 1 compatibility:
 - `POST /ingest` (multipart PDF)
 - `POST /process/all` (process all PDFs from `data/input`)
 - `GET /results/candidates`
 - `GET /results/report`
 
-`POST /process/all` writes linked CSV outputs in `data/output` for all extracted entities.
-If some PDFs fail to parse, the endpoint still processes valid files and returns `failed_files`.
+Milestone 2 endpoints:
+- `POST /m2/ingest` (upload multiple CV PDFs)
+- `POST /m2/process/all` (auto-read all PDFs from `data/input`)
+- `POST /m2/upload-and-process` (upload selected PDFs and process only uploaded files)
+- `GET /m2/results/latest` (latest JSON result)
+- `GET /m2/dashboard` (table rows + chart-ready aggregates)
+
+`POST /m2/process/all` writes consolidated JSON output to `data/output/milestone2_candidates.json`.
 
 ## Tests
 Run quick checks with:
@@ -40,8 +51,36 @@ pytest -q
 
 Minimal syntax check:
 ```bash
-python3 -m py_compile app/*.py tests/*.py
+python -m py_compile app/*.py tests/*.py
 ```
+
+## Milestone 2 Output Format
+Each candidate includes the required fields:
+
+```json
+{
+   "name": "",
+   "education_analysis": {"...": "..."},
+   "experience_analysis": {"...": "..."},
+   "missing_info": [],
+   "summary": "",
+   "email_draft": ""
+}
+```
+
+Additional supporting fields are included (`personal_info`, `structured_data`, `research_profile`, `raw_text_path`) to make Milestone 3 extension easier.
+
+## Frontend (Sample Intermediate UI)
+The sample frontend is under `frontend/` and uses React + Vite.
+
+Run it with:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Backend should be running on `http://127.0.0.1:8000`.
 
 ## Demo (Quick)
 1. Put 1-2 PDF CVs in `data/input`.
@@ -56,7 +95,7 @@ python3 -m py_compile app/*.py tests/*.py
    - `GET /results/report`
 5. Show generated files under `data/output`.
 
-## Milestone 1 Evidence
+## Milestone 1 Evidence (Reference)
 - Requirement traceability: `docs/m1-traceability.md`
 - Architecture and design docs: `docs/`
 - UI/UX design notes: `docs/ui-ux.md`
@@ -67,4 +106,4 @@ python3 -m py_compile app/*.py tests/*.py
 
 ## Notes
 - `.local/worklog.md` is intentionally ignored from git.
-- Parser is deterministic in M1 and designed to be extended with LLM-based extraction in M2/M3.
+- Extraction and analysis in M2 are deterministic/rule-based and intentionally modular for M3 LLM upgrades.
