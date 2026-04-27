@@ -1,0 +1,949 @@
+{
+  "processed_files": 3,
+  "candidates": [
+    {
+      "name": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 22-Oct-2025 )",
+      "personal_info": {
+        "candidate_id": "cv_1_muhammad_salman_p14",
+        "name": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 22-Oct-2025 )",
+        "email": "anwar.ce@must.edu.pk"
+      },
+      "structured_data": {
+        "education": [
+          {
+            "level": "PG",
+            "degree": "PhD in Electrical Engineering Communication Systems 3.33 2024 International Islamic university, Islamabad",
+            "institution": "",
+            "board": "",
+            "start_year": 2024,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "PhD in Electrical Engineering Communication Systems 3.33 2024 International Islamic university, Islamabad"
+          },
+          {
+            "level": "PG",
+            "degree": "MS in Electrical Engineering Communication Systems 3.03 2014 COMSATS University, Islamabad, Attock Campus",
+            "institution": "",
+            "board": "",
+            "start_year": 2014,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "MS in Electrical Engineering Communication Systems 3.03 2014 COMSATS University, Islamabad, Attock Campus"
+          },
+          {
+            "level": "PG",
+            "degree": "BSc Electronics Engineering Electronics 69.84 2011 COMSATS University, Islamabad, Abbottabad Campus",
+            "institution": "",
+            "board": "",
+            "start_year": 2011,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "BSc Electronics Engineering Electronics 69.84 2011 COMSATS University, Islamabad, Abbottabad Campus"
+          },
+          {
+            "level": "SSE",
+            "degree": "HSSC Pre-Engineering 65.45 2006 B.I.S.E Bannu",
+            "institution": "",
+            "board": "HSSC Pre-Engineering 65.45 2006 B.I.S.E Bannu",
+            "start_year": 2006,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "HSSC Pre-Engineering 65.45 2006 B.I.S.E Bannu"
+          },
+          {
+            "level": "SSE",
+            "degree": "SSc Science Subjects 71 2004 B.I.S.E Bannu",
+            "institution": "",
+            "board": "SSc Science Subjects 71 2004 B.I.S.E Bannu",
+            "start_year": 2004,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "SSc Science Subjects 71 2004 B.I.S.E Bannu"
+          }
+        ],
+        "experience": [
+          {
+            "job_title": "Program Coordinator Qurtuba University",
+            "organization": "D.I.Khan DERA ISMAIL KHAN Sep",
+            "start_date": "2017",
+            "end_date": "2023",
+            "start_year": 2017,
+            "end_year": 2023,
+            "raw": "Program Coordinator Qurtuba University, D.I.Khan DERA ISMAIL KHAN Sep-2017 - Aug-2023"
+          },
+          {
+            "job_title": "Support Engineer Al",
+            "organization": "Rehman enterprises",
+            "start_date": "2012",
+            "end_date": "2015",
+            "start_year": 2012,
+            "end_year": 2015,
+            "raw": "Support Engineer Al-Rehman enterprises, Islamabad Islamabad, Pakistan Jan-2012 - Aug-2015"
+          },
+          {
+            "job_title": "Lecturer Qurtuba University",
+            "organization": "D.I.Khan D.I.Khan (KPK)",
+            "start_date": "2015",
+            "end_date": "2018",
+            "start_year": 2015,
+            "end_year": 2018,
+            "raw": "Lecturer Qurtuba University, D.I.Khan D.I.Khan (KPK), Pakistan Aug-2015 - Mar-2018"
+          },
+          {
+            "job_title": "Assistant Professor Qurtuba University",
+            "organization": "D.I.Khan D.I.Khan (KPK)",
+            "start_date": "2018",
+            "end_date": "2023",
+            "start_year": 2018,
+            "end_year": 2023,
+            "raw": "Assistant Professor Qurtuba University, D.I.Khan D.I.Khan (KPK), Pakistan Mar-2018 - Aug-2023"
+          },
+          {
+            "job_title": "Associate Professor Xi'an International University",
+            "organization": "China Shaanxi",
+            "start_date": "2025",
+            "end_date": "Present",
+            "start_year": 2025,
+            "end_year": null,
+            "raw": "Associate Professor Xi'an International University, China Shaanxi, China Jan-2025 - Present"
+          }
+        ],
+        "skills": [],
+        "publications": [
+          {
+            "title": "Paper Title Name of Author Name of CO-Author Published In No Impact Vol PP Date",
+            "year": null,
+            "type": "unknown",
+            "raw": "Paper Title Name of Author Name of CO-Author Published In No Impact Vol PP Date"
+          },
+          {
+            "title": "A Hybrid Framework Muhammad Salman Qamar Muhammad Fahad International Journal 3 2.10 84 5463- Jul",
+            "year": null,
+            "type": "journal",
+            "raw": "A Hybrid Framework Muhammad Salman Qamar Muhammad Fahad International Journal 3 2.10 84 5463- Jul-"
+          },
+          {
+            "title": "Integrating Deterministic Munir 5485 2025",
+            "year": 2025,
+            "type": "unknown",
+            "raw": "Integrating Deterministic Munir 5485 2025"
+          },
+          {
+            "title": "Clustering, Neural Networks,",
+            "year": null,
+            "type": "unknown",
+            "raw": "Clustering, Neural Networks,"
+          },
+          {
+            "title": "and Energy-Aware Routing",
+            "year": null,
+            "type": "unknown",
+            "raw": "and Energy-Aware Routing"
+          },
+          {
+            "title": "for Enhanced Efficiency and",
+            "year": null,
+            "type": "unknown",
+            "raw": "for Enhanced Efficiency and"
+          },
+          {
+            "title": "Longevity in Wireless Sensor",
+            "year": null,
+            "type": "unknown",
+            "raw": "Longevity in Wireless Sensor"
+          },
+          {
+            "title": "AI for Cleaner Air: Muhammad Salman Qamar Muhammad Fahad International Journal 3 2.50 144 3557- Sep",
+            "year": null,
+            "type": "journal",
+            "raw": "AI for Cleaner Air: Muhammad Salman Qamar Muhammad Fahad International Journal 3 2.50 144 3557- Sep-"
+          },
+          {
+            "title": "PredictiveModeling of PM2.5 Munir, Athar Waseem 3584 2025",
+            "year": 2025,
+            "type": "unknown",
+            "raw": "PredictiveModeling of PM2.5 Munir, Athar Waseem 3584 2025"
+          },
+          {
+            "title": "Using Deep Learning and",
+            "year": null,
+            "type": "unknown",
+            "raw": "Using Deep Learning and"
+          },
+          {
+            "title": "Traditional Time-Series",
+            "year": null,
+            "type": "unknown",
+            "raw": "Traditional Time-Series"
+          },
+          {
+            "title": "Approaches",
+            "year": null,
+            "type": "unknown",
+            "raw": "Approaches"
+          },
+          {
+            "title": "Improvement of Traveling Muhammad Salman Qamar Shanshan Tu∗, International Journal 11 2.80 11 4780 May",
+            "year": null,
+            "type": "journal",
+            "raw": "Improvement of Traveling Muhammad Salman Qamar Shanshan Tu∗, International Journal 11 2.80 11 4780 May-"
+          },
+          {
+            "title": "Salesman Problem Solution Farman Ali∗, Ammar 2021",
+            "year": 2021,
+            "type": "unknown",
+            "raw": "Salesman Problem Solution Farman Ali∗, Ammar 2021"
+          },
+          {
+            "title": "using Hybrid Algorithm based Armghan,",
+            "year": null,
+            "type": "unknown",
+            "raw": "using Hybrid Algorithm based Armghan,"
+          },
+          {
+            "title": "on Best-Worst Ant System Muhammad Fahad",
+            "year": null,
+            "type": "unknown",
+            "raw": "on Best-Worst Ant System Muhammad Fahad"
+          },
+          {
+            "title": "and Particle Swarm Munir, Fayadh",
+            "year": null,
+            "type": "unknown",
+            "raw": "and Particle Swarm Munir, Fayadh"
+          },
+          {
+            "title": "Optimization Alenezi, Fazal",
+            "year": null,
+            "type": "unknown",
+            "raw": "Optimization Alenezi, Fazal"
+          },
+          {
+            "title": "Muhammad5, Asar",
+            "year": null,
+            "type": "unknown",
+            "raw": "Muhammad5, Asar"
+          },
+          {
+            "title": "Ali, Norah Alnaim",
+            "year": null,
+            "type": "unknown",
+            "raw": "Ali, Norah Alnaim"
+          },
+          {
+            "title": "Enhancing Energy Efficiency Muhammad Salman Qamar Ihsan ul Haq, international Conference 0.00 0 1-6 Jul",
+            "year": null,
+            "type": "conference",
+            "raw": "Enhancing Energy Efficiency Muhammad Salman Qamar Ihsan ul Haq, international Conference 0.00 0 1-6 Jul-"
+          },
+          {
+            "title": "in WSNs with Hybrid LEACH- Muhammad Fahad 2024",
+            "year": 2024,
+            "type": "unknown",
+            "raw": "in WSNs with Hybrid LEACH- Muhammad Fahad 2024"
+          },
+          {
+            "title": "D and ANN Munir, Mardeni Bin",
+            "year": null,
+            "type": "unknown",
+            "raw": "D and ANN Munir, Mardeni Bin"
+          },
+          {
+            "title": "Roslee, Adnan Anwar",
+            "year": null,
+            "type": "unknown",
+            "raw": "Roslee, Adnan Anwar"
+          },
+          {
+            "title": "Awan, Athar Waseem",
+            "year": null,
+            "type": "unknown",
+            "raw": "Awan, Athar Waseem"
+          },
+          {
+            "title": "A Novel Approach to Energy Muhammad Salman Qamar Ihsan ul Haq, Amil International Journal 2 2.10 79 2945- May",
+            "year": null,
+            "type": "journal",
+            "raw": "A Novel Approach to Energy Muhammad Salman Qamar Ihsan ul Haq, Amil International Journal 2 2.10 79 2945- May-"
+          },
+          {
+            "title": "Optimization: Efficient Path Daraz, Atif M. Alamri, 2970 2024",
+            "year": 2024,
+            "type": "unknown",
+            "raw": "Optimization: Efficient Path Daraz, Atif M. Alamri, 2970 2024"
+          },
+          {
+            "title": "Selection in Wireless Sensor Salman A. AlQahtani",
+            "year": null,
+            "type": "unknown",
+            "raw": "Selection in Wireless Sensor Salman A. AlQahtani"
+          },
+          {
+            "title": "Networks with Hybrid ANN",
+            "year": null,
+            "type": "unknown",
+            "raw": "Networks with Hybrid ANN"
+          },
+          {
+            "title": "References",
+            "year": null,
+            "type": "unknown",
+            "raw": "References"
+          },
+          {
+            "title": "Name Contact Type Designation Address Phone Fax Email",
+            "year": null,
+            "type": "unknown",
+            "raw": "Name Contact Type Designation Address Phone Fax Email"
+          },
+          {
+            "title": "Dr. Anwar Khitab Reference Professor MUST, Azad Kashmir +92 312 5355098 anwar.ce@must.edu.pk",
+            "year": null,
+            "type": "unknown",
+            "raw": "Dr. Anwar Khitab Reference Professor MUST, Azad Kashmir +92 312 5355098 anwar.ce@must.edu.pk"
+          },
+          {
+            "title": "Dr. Ihsan ul Haq Reference Associate Professor/HOD IIU, Islamabad +92 331 5468189 ihsanulhaq@iiu.edu.pk",
+            "year": null,
+            "type": "unknown",
+            "raw": "Dr. Ihsan ul Haq Reference Associate Professor/HOD IIU, Islamabad +92 331 5468189 ihsanulhaq@iiu.edu.pk"
+          }
+        ]
+      },
+      "education_analysis": {
+        "progression": [
+          "SSE",
+          "SSE",
+          "PG",
+          "PG",
+          "PG"
+        ],
+        "progression_summary": "SSE → SSE → PG → PG → PG",
+        "grade_trend": "insufficient-data",
+        "average_score": 0.0,
+        "gap_duration": [
+          {
+            "between": "SSE->PG",
+            "years": 20
+          }
+        ],
+        "strength_classification": "Weak"
+      },
+      "experience_analysis": {
+        "timeline_report": [
+          "Support Engineer Al (2012 - 2015)",
+          "Lecturer Qurtuba University (2015 - 2018)",
+          "Program Coordinator Qurtuba University (2017 - 2023)",
+          "Assistant Professor Qurtuba University (2018 - 2023)",
+          "Associate Professor Xi'an International University (2025 - None)"
+        ],
+        "overlap_between_jobs": [
+          {
+            "first": "Support Engineer Al-Rehman enterprises, Islamabad Islamabad, Pakistan Jan-2012 - Aug-2015",
+            "second": "Lecturer Qurtuba University, D.I.Khan D.I.Khan (KPK), Pakistan Aug-2015 - Mar-2018"
+          },
+          {
+            "first": "Lecturer Qurtuba University, D.I.Khan D.I.Khan (KPK), Pakistan Aug-2015 - Mar-2018",
+            "second": "Program Coordinator Qurtuba University, D.I.Khan DERA ISMAIL KHAN Sep-2017 - Aug-2023"
+          },
+          {
+            "first": "Program Coordinator Qurtuba University, D.I.Khan DERA ISMAIL KHAN Sep-2017 - Aug-2023",
+            "second": "Assistant Professor Qurtuba University, D.I.Khan D.I.Khan (KPK), Pakistan Mar-2018 - Aug-2023"
+          }
+        ],
+        "overlap_with_education": [
+          {
+            "job": "Support Engineer Al-Rehman enterprises, Islamabad Islamabad, Pakistan Jan-2012 - Aug-2015",
+            "education": "MS in Electrical Engineering Communication Systems 3.03 2014 COMSATS University, Islamabad, Attock Campus"
+          }
+        ],
+        "employment_gaps": [
+          {
+            "between": "Assistant Professor Qurtuba University -> Associate Professor Xi'an International University",
+            "years": 2
+          }
+        ],
+        "career_progression": "progressing",
+        "experience_duration_years": 17,
+        "flags": [
+          "Job timeline overlap detected",
+          "Experience overlaps with education period",
+          "Employment gaps detected"
+        ]
+      },
+      "research_profile": {
+        "publication_count": 33,
+        "publication_titles": [
+          "Paper Title Name of Author Name of CO-Author Published In No Impact Vol PP Date",
+          "A Hybrid Framework Muhammad Salman Qamar Muhammad Fahad International Journal 3 2.10 84 5463- Jul",
+          "Integrating Deterministic Munir 5485 2025",
+          "Clustering, Neural Networks,",
+          "and Energy-Aware Routing",
+          "for Enhanced Efficiency and",
+          "Longevity in Wireless Sensor",
+          "AI for Cleaner Air: Muhammad Salman Qamar Muhammad Fahad International Journal 3 2.50 144 3557- Sep",
+          "PredictiveModeling of PM2.5 Munir, Athar Waseem 3584 2025",
+          "Using Deep Learning and",
+          "Traditional Time-Series",
+          "Approaches",
+          "Improvement of Traveling Muhammad Salman Qamar Shanshan Tu∗, International Journal 11 2.80 11 4780 May",
+          "Salesman Problem Solution Farman Ali∗, Ammar 2021",
+          "using Hybrid Algorithm based Armghan,",
+          "on Best-Worst Ant System Muhammad Fahad",
+          "and Particle Swarm Munir, Fayadh",
+          "Optimization Alenezi, Fazal",
+          "Muhammad5, Asar",
+          "Ali, Norah Alnaim",
+          "Enhancing Energy Efficiency Muhammad Salman Qamar Ihsan ul Haq, international Conference 0.00 0 1-6 Jul",
+          "in WSNs with Hybrid LEACH- Muhammad Fahad 2024",
+          "D and ANN Munir, Mardeni Bin",
+          "Roslee, Adnan Anwar",
+          "Awan, Athar Waseem",
+          "A Novel Approach to Energy Muhammad Salman Qamar Ihsan ul Haq, Amil International Journal 2 2.10 79 2945- May",
+          "Optimization: Efficient Path Daraz, Atif M. Alamri, 2970 2024",
+          "Selection in Wireless Sensor Salman A. AlQahtani",
+          "Networks with Hybrid ANN",
+          "References",
+          "Name Contact Type Designation Address Phone Fax Email",
+          "Dr. Anwar Khitab Reference Professor MUST, Azad Kashmir +92 312 5355098 anwar.ce@must.edu.pk",
+          "Dr. Ihsan ul Haq Reference Associate Professor/HOD IIU, Islamabad +92 331 5468189 ihsanulhaq@iiu.edu.pk"
+        ],
+        "classification": {
+          "journal": 4,
+          "conference": 1,
+          "unknown": 28
+        }
+      },
+      "missing_info": [
+        "SSE marks/CGPA",
+        "PG marks/CGPA",
+        "Experience duration (start/end date)"
+      ],
+      "summary": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 22-Oct-2025 ): Academic strength is Weak (avg score 0.0%) with progression [SSE → SSE → PG → PG → PG]. Professional experience is 17 years with career trend 'progressing'. Key observations: educational gaps, Job timeline overlap detected, Experience overlaps with education period, Employment gaps detected, missing profile details. Overall suitability: Needs further review.",
+      "email_draft": "Dear Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 22-Oct-2025 ),\n\nThank you for your application and interest in the position. During our profile review, we noticed a few details are missing or unclear in your CV:\n\n- SSE marks/CGPA\n- PG marks/CGPA\n- Experience duration (start/end date)\n\nPlease share an updated CV (PDF) with the above details so we can complete your assessment.\nIf any item is not applicable, kindly mention that explicitly in your response.\n\nBest regards,\nRecruitment Team\nTALASH",
+      "raw_text_path": "/home/spark/NUST/Semester 6/Large Language Models/Project/data/output/raw_text/cv_1_muhammad_salman_p14.txt"
+    },
+    {
+      "name": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 25-Oct-2025 )",
+      "personal_info": {
+        "candidate_id": "cv_2_aamina_akbar_p58",
+        "name": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 25-Oct-2025 )",
+        "email": "dr.shaheen@fui.edu.pk"
+      },
+      "structured_data": {
+        "education": [
+          {
+            "level": "PG",
+            "degree": "PhD Electrical (Communication) Wireless Communication, Convex 3.83 2025 Institute of Space Technology",
+            "institution": "",
+            "board": "",
+            "start_year": 2025,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "PhD Electrical (Communication) Wireless Communication, Convex 3.83 2025 Institute of Space Technology"
+          },
+          {
+            "level": "PG",
+            "degree": "MS Electrical (Telecom) Telecommunication 3.90 2013 Center for Advanced Studies in",
+            "institution": "",
+            "board": "",
+            "start_year": 2013,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "MS Electrical (Telecom) Telecommunication 3.90 2013 Center for Advanced Studies in"
+          },
+          {
+            "level": "UG",
+            "degree": "BE Electrical(Telecom) Telecommunication 2.63 2010 NUST",
+            "institution": "",
+            "board": "",
+            "start_year": 2010,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "BE Electrical(Telecom) Telecommunication 2.63 2010 NUST"
+          },
+          {
+            "level": "SSE",
+            "degree": "HSSC Pre-Engineering 76% 2006 Federal Board",
+            "institution": "",
+            "board": "HSSC Pre-Engineering 76% 2006 Federal Board",
+            "start_year": 2006,
+            "end_year": null,
+            "score_raw": "76%",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": 76.0,
+            "raw": "HSSC Pre-Engineering 76% 2006 Federal Board"
+          },
+          {
+            "level": "SSE",
+            "degree": "SSC Science 88% 2004 Federal Board",
+            "institution": "",
+            "board": "SSC Science 88% 2004 Federal Board",
+            "start_year": 2004,
+            "end_year": null,
+            "score_raw": "88%",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": 88.0,
+            "raw": "SSC Science 88% 2004 Federal Board"
+          }
+        ],
+        "experience": [
+          {
+            "job_title": "Lecturer Foundation University Rawalpindi Campus RAWALPINDI Feb",
+            "organization": "2014",
+            "start_date": "2014",
+            "end_date": "2024",
+            "start_year": 2014,
+            "end_year": 2024,
+            "raw": "Lecturer Foundation University Rawalpindi Campus RAWALPINDI Feb-2014 - Sep-2024"
+          }
+        ],
+        "skills": [],
+        "publications": [
+          {
+            "title": "Paper Title Name of Author Name of CO-Author Published In No Impact Vol PP Date",
+            "year": null,
+            "type": "unknown",
+            "raw": "Paper Title Name of Author Name of CO-Author Published In No Impact Vol PP Date"
+          },
+          {
+            "title": "Joint Backhaul Pairing and Myra Khalid Aamina Akbar, International 0.00 0 1-6 Nov",
+            "year": null,
+            "type": "unknown",
+            "raw": "Joint Backhaul Pairing and Myra Khalid Aamina Akbar, International 0.00 0 1-6 Nov-"
+          },
+          {
+            "title": "Resource Allocation of Hassaan Khaliq Conference 2023",
+            "year": 2023,
+            "type": "conference",
+            "raw": "Resource Allocation of Hassaan Khaliq Conference 2023"
+          },
+          {
+            "title": "Moving Small Cells Using Qureshi, Sobia",
+            "year": null,
+            "type": "unknown",
+            "raw": "Moving Small Cells Using Qureshi, Sobia"
+          },
+          {
+            "title": "NOMA Jangsher",
+            "year": null,
+            "type": "unknown",
+            "raw": "NOMA Jangsher"
+          },
+          {
+            "title": "Ga-Optimized Jt-Comp F- Aamina Akbar Ashfaq Ahmed, Journal 5147939 2.20 72 102715 Oct",
+            "year": null,
+            "type": "journal",
+            "raw": "Ga-Optimized Jt-Comp F- Aamina Akbar Ashfaq Ahmed, Journal 5147939 2.20 72 102715 Oct-"
+          },
+          {
+            "title": "Noma in Hetnets: Adaptive Adnan Zafar, Sobia 2025",
+            "year": 2025,
+            "type": "unknown",
+            "raw": "Noma in Hetnets: Adaptive Adnan Zafar, Sobia 2025"
+          },
+          {
+            "title": "Resource Allocation with Jangsher",
+            "year": null,
+            "type": "unknown",
+            "raw": "Resource Allocation with Jangsher"
+          },
+          {
+            "title": "Imperfect Sic",
+            "year": null,
+            "type": "unknown",
+            "raw": "Imperfect Sic"
+          },
+          {
+            "title": "An energy-efficient JT-CoMP Aamina Akbar Ashfaq Ahmed, Journal 110733 4.40 254 110733 Dec",
+            "year": null,
+            "type": "journal",
+            "raw": "An energy-efficient JT-CoMP Aamina Akbar Ashfaq Ahmed, Journal 110733 4.40 254 110733 Dec-"
+          },
+          {
+            "title": "enabled framework with Adnan Zafar, Sobia 2024",
+            "year": 2024,
+            "type": "unknown",
+            "raw": "enabled framework with Adnan Zafar, Sobia 2024"
+          },
+          {
+            "title": "adaptive OMA/NOMA in Jangsher",
+            "year": null,
+            "type": "unknown",
+            "raw": "adaptive OMA/NOMA in Jangsher"
+          },
+          {
+            "title": "NOMA and 5G emerging Aamina Akbar Sobia Jangsher, Journal 107950 4.40 190 107950 May",
+            "year": null,
+            "type": "journal",
+            "raw": "NOMA and 5G emerging Aamina Akbar Sobia Jangsher, Journal 107950 4.40 190 107950 May-"
+          },
+          {
+            "title": "technologies: A survey on Farrukh Aziz Bhatti 2021",
+            "year": 2021,
+            "type": "unknown",
+            "raw": "technologies: A survey on Farrukh Aziz Bhatti 2021"
+          },
+          {
+            "title": "issues and solution",
+            "year": null,
+            "type": "unknown",
+            "raw": "issues and solution"
+          },
+          {
+            "title": "techniques",
+            "year": null,
+            "type": "unknown",
+            "raw": "techniques"
+          },
+          {
+            "title": "Awards &",
+            "year": null,
+            "type": "unknown",
+            "raw": "Awards &"
+          },
+          {
+            "title": "Scholarships",
+            "year": null,
+            "type": "unknown",
+            "raw": "Scholarships"
+          },
+          {
+            "title": "Type Detail",
+            "year": null,
+            "type": "unknown",
+            "raw": "Type Detail"
+          },
+          {
+            "title": "Merit Scholarships Awarded HEC Faculty development scholarship program for PhD studies.",
+            "year": null,
+            "type": "unknown",
+            "raw": "Merit Scholarships Awarded HEC Faculty development scholarship program for PhD studies."
+          },
+          {
+            "title": "Merit Scholarships Merit scholarship by Army Public School and College for outstanding performance in Secondary School Certificate Examination.",
+            "year": null,
+            "type": "unknown",
+            "raw": "Merit Scholarships Merit scholarship by Army Public School and College for outstanding performance in Secondary School Certificate Examination."
+          },
+          {
+            "title": "Membership Pakistan Engineering Council Number-ELECT/32735",
+            "year": null,
+            "type": "unknown",
+            "raw": "Membership Pakistan Engineering Council Number-ELECT/32735"
+          },
+          {
+            "title": "Merit Scholarships Merit scholarship in MS Electrical(Telecom) Engineering by Center for Advanced Studies in Engineering(CASE),Islamabad in all",
+            "year": null,
+            "type": "unknown",
+            "raw": "Merit Scholarships Merit scholarship in MS Electrical(Telecom) Engineering by Center for Advanced Studies in Engineering(CASE),Islamabad in all"
+          },
+          {
+            "title": "semesters(1st,2nd & 3rd).",
+            "year": null,
+            "type": "unknown",
+            "raw": "semesters(1st,2nd & 3rd)."
+          },
+          {
+            "title": "References",
+            "year": null,
+            "type": "unknown",
+            "raw": "References"
+          },
+          {
+            "title": "Name Contact Designation Address Phone Fax Email",
+            "year": null,
+            "type": "unknown",
+            "raw": "Name Contact Designation Address Phone Fax Email"
+          },
+          {
+            "title": "Dr. M. Shaheen Reference Dean & Professor at Foundation Foundation University School of 03175634789 dr.shaheen@fui.edu.pk",
+            "year": null,
+            "type": "unknown",
+            "raw": "Dr. M. Shaheen Reference Dean & Professor at Foundation Foundation University School of 03175634789 dr.shaheen@fui.edu.pk"
+          },
+          {
+            "title": "Khan Tanoli University School of Science and Science and Technology",
+            "year": null,
+            "type": "unknown",
+            "raw": "Khan Tanoli University School of Science and Science and Technology"
+          },
+          {
+            "title": "Technology (FUSST), Rawalpindi (FUSST), Rawalpindi Campus",
+            "year": null,
+            "type": "unknown",
+            "raw": "Technology (FUSST), Rawalpindi (FUSST), Rawalpindi Campus"
+          },
+          {
+            "title": "Dr. Adnan Zafar Reference HoD Electrical Engineering Institute of Space Technology 03414965030 adnan.zafar@ist.edu.pk",
+            "year": null,
+            "type": "unknown",
+            "raw": "Dr. Adnan Zafar Reference HoD Electrical Engineering Institute of Space Technology 03414965030 adnan.zafar@ist.edu.pk"
+          },
+          {
+            "title": "Department (IST), Islamabad",
+            "year": null,
+            "type": "unknown",
+            "raw": "Department (IST), Islamabad"
+          },
+          {
+            "title": "Dr. Sobia Reference Assistant Professor at Dublin City Dublin City University (DCU), 03235524892 sobia.jangsher@dcu.ie",
+            "year": null,
+            "type": "unknown",
+            "raw": "Dr. Sobia Reference Assistant Professor at Dublin City Dublin City University (DCU), 03235524892 sobia.jangsher@dcu.ie"
+          },
+          {
+            "title": "Jangsher University (DCU), Ireland Ireland (Whatsapp)",
+            "year": null,
+            "type": "unknown",
+            "raw": "Jangsher University (DCU), Ireland Ireland (Whatsapp)"
+          }
+        ]
+      },
+      "education_analysis": {
+        "progression": [
+          "SSE",
+          "SSE",
+          "UG",
+          "PG",
+          "PG"
+        ],
+        "progression_summary": "SSE → SSE → UG → PG → PG",
+        "grade_trend": "improving",
+        "average_score": 82.0,
+        "gap_duration": [
+          {
+            "between": "SSE->UG",
+            "years": 6
+          },
+          {
+            "between": "UG->PG",
+            "years": 15
+          }
+        ],
+        "strength_classification": "متوسط"
+      },
+      "experience_analysis": {
+        "timeline_report": [
+          "Lecturer Foundation University Rawalpindi Campus RAWALPINDI Feb (2014 - 2024)"
+        ],
+        "overlap_between_jobs": [],
+        "overlap_with_education": [],
+        "employment_gaps": [],
+        "career_progression": "undetermined",
+        "experience_duration_years": 10,
+        "flags": []
+      },
+      "research_profile": {
+        "publication_count": 33,
+        "publication_titles": [
+          "Paper Title Name of Author Name of CO-Author Published In No Impact Vol PP Date",
+          "Joint Backhaul Pairing and Myra Khalid Aamina Akbar, International 0.00 0 1-6 Nov",
+          "Resource Allocation of Hassaan Khaliq Conference 2023",
+          "Moving Small Cells Using Qureshi, Sobia",
+          "NOMA Jangsher",
+          "Ga-Optimized Jt-Comp F- Aamina Akbar Ashfaq Ahmed, Journal 5147939 2.20 72 102715 Oct",
+          "Noma in Hetnets: Adaptive Adnan Zafar, Sobia 2025",
+          "Resource Allocation with Jangsher",
+          "Imperfect Sic",
+          "An energy-efficient JT-CoMP Aamina Akbar Ashfaq Ahmed, Journal 110733 4.40 254 110733 Dec",
+          "enabled framework with Adnan Zafar, Sobia 2024",
+          "adaptive OMA/NOMA in Jangsher",
+          "NOMA and 5G emerging Aamina Akbar Sobia Jangsher, Journal 107950 4.40 190 107950 May",
+          "technologies: A survey on Farrukh Aziz Bhatti 2021",
+          "issues and solution",
+          "techniques",
+          "Awards &",
+          "Scholarships",
+          "Type Detail",
+          "Merit Scholarships Awarded HEC Faculty development scholarship program for PhD studies.",
+          "Merit Scholarships Merit scholarship by Army Public School and College for outstanding performance in Secondary School Certificate Examination.",
+          "Membership Pakistan Engineering Council Number-ELECT/32735",
+          "Merit Scholarships Merit scholarship in MS Electrical(Telecom) Engineering by Center for Advanced Studies in Engineering(CASE),Islamabad in all",
+          "semesters(1st,2nd & 3rd).",
+          "References",
+          "Name Contact Designation Address Phone Fax Email",
+          "Dr. M. Shaheen Reference Dean & Professor at Foundation Foundation University School of 03175634789 dr.shaheen@fui.edu.pk",
+          "Khan Tanoli University School of Science and Science and Technology",
+          "Technology (FUSST), Rawalpindi (FUSST), Rawalpindi Campus",
+          "Dr. Adnan Zafar Reference HoD Electrical Engineering Institute of Space Technology 03414965030 adnan.zafar@ist.edu.pk",
+          "Department (IST), Islamabad",
+          "Dr. Sobia Reference Assistant Professor at Dublin City Dublin City University (DCU), 03235524892 sobia.jangsher@dcu.ie",
+          "Jangsher University (DCU), Ireland Ireland (Whatsapp)"
+        ],
+        "classification": {
+          "journal": 3,
+          "conference": 1,
+          "unknown": 29
+        }
+      },
+      "missing_info": [
+        "UG marks/CGPA",
+        "PG marks/CGPA"
+      ],
+      "summary": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 25-Oct-2025 ): Academic strength is متوسط (avg score 82.0%) with progression [SSE → SSE → UG → PG → PG]. Professional experience is 10 years with career trend 'undetermined'. Key observations: educational gaps, missing profile details. Overall suitability: Moderate fit.",
+      "email_draft": "Dear Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 25-Oct-2025 ),\n\nThank you for your application and interest in the position. During our profile review, we noticed a few details are missing or unclear in your CV:\n\n- UG marks/CGPA\n- PG marks/CGPA\n\nPlease share an updated CV (PDF) with the above details so we can complete your assessment.\nIf any item is not applicable, kindly mention that explicitly in your response.\n\nBest regards,\nRecruitment Team\nTALASH",
+      "raw_text_path": "/home/spark/NUST/Semester 6/Large Language Models/Project/data/output/raw_text/cv_2_aamina_akbar_p58.txt"
+    },
+    {
+      "name": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 20-Oct-2025 )",
+      "personal_info": {
+        "candidate_id": "cv_3_muhammad_shahwaz_p911",
+        "name": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 20-Oct-2025 )",
+        "email": ""
+      },
+      "structured_data": {
+        "education": [
+          {
+            "level": "UG",
+            "degree": "BACHELOR OF ELECTRONICS 75 2012 DAWOOD COLEEGE OF ENGINEERING AND",
+            "institution": "",
+            "board": "",
+            "start_year": 2012,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "BACHELOR OF ELECTRONICS 75 2012 DAWOOD COLEEGE OF ENGINEERING AND"
+          },
+          {
+            "level": "SSE",
+            "degree": "ssc science 77 2003 karachi matric board",
+            "institution": "",
+            "board": "ssc science 77 2003 karachi matric board",
+            "start_year": 2003,
+            "end_year": null,
+            "score_raw": "",
+            "cgpa": null,
+            "cgpa_scale": null,
+            "percentage": null,
+            "raw": "ssc science 77 2003 karachi matric board"
+          }
+        ],
+        "experience": [
+          {
+            "job_title": "trainee engineer tuwairqi steel mill karachi Jul",
+            "organization": "2014",
+            "start_date": "2014",
+            "end_date": "2014",
+            "start_year": 2014,
+            "end_year": 2014,
+            "raw": "trainee engineer tuwairqi steel mill karachi Jul-2014 - Dec-2014"
+          },
+          {
+            "job_title": "INTERNEE PTCL SWITCHING AND TRANSMISSION NETWORK Jan",
+            "organization": "2011",
+            "start_date": "2011",
+            "end_date": "2011",
+            "start_year": 2011,
+            "end_year": 2011,
+            "raw": "INTERNEE PTCL SWITCHING AND TRANSMISSION NETWORK Jan-2011 - Feb-2011"
+          },
+          {
+            "job_title": "INTERNEE PIA AIRPORT ENGG DEPT KARACHI Jun",
+            "organization": "2010",
+            "start_date": "2010",
+            "end_date": "2010",
+            "start_year": 2010,
+            "end_year": 2010,
+            "raw": "INTERNEE PIA AIRPORT ENGG DEPT KARACHI Jun-2010 - Aug-2010"
+          },
+          {
+            "job_title": "FARHAN KHAN Reference ASSISTANT MANAGER KARACHI 03089012009",
+            "organization": "",
+            "start_date": "2009",
+            "end_date": "Present",
+            "start_year": 2009,
+            "end_year": null,
+            "raw": "FARHAN KHAN Reference ASSISTANT MANAGER KARACHI 03089012009"
+          }
+        ],
+        "skills": [],
+        "publications": []
+      },
+      "education_analysis": {
+        "progression": [
+          "SSE",
+          "UG"
+        ],
+        "progression_summary": "SSE → UG",
+        "grade_trend": "insufficient-data",
+        "average_score": 0.0,
+        "gap_duration": [
+          {
+            "between": "SSE->UG",
+            "years": 9
+          }
+        ],
+        "strength_classification": "Weak"
+      },
+      "experience_analysis": {
+        "timeline_report": [
+          "FARHAN KHAN Reference ASSISTANT MANAGER KARACHI 03089012009 (2009 - None)",
+          "INTERNEE PIA AIRPORT ENGG DEPT KARACHI Jun (2010 - 2010)",
+          "INTERNEE PTCL SWITCHING AND TRANSMISSION NETWORK Jan (2011 - 2011)",
+          "trainee engineer tuwairqi steel mill karachi Jul (2014 - 2014)"
+        ],
+        "overlap_between_jobs": [],
+        "overlap_with_education": [],
+        "employment_gaps": [
+          {
+            "between": "INTERNEE PTCL SWITCHING AND TRANSMISSION NETWORK Jan -> trainee engineer tuwairqi steel mill karachi Jul",
+            "years": 3
+          }
+        ],
+        "career_progression": "stagnant-or-declining",
+        "experience_duration_years": 0,
+        "flags": [
+          "Employment gaps detected"
+        ]
+      },
+      "research_profile": {
+        "publication_count": 0,
+        "publication_titles": [],
+        "classification": {
+          "journal": 0,
+          "conference": 0,
+          "unknown": 0
+        }
+      },
+      "missing_info": [
+        "SSE marks/CGPA",
+        "UG marks/CGPA",
+        "Experience duration (start/end date)",
+        "Publication details"
+      ],
+      "summary": "Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 20-Oct-2025 ): Academic strength is Weak (avg score 0.0%) with progression [SSE → UG]. Professional experience is 0 years with career trend 'stagnant-or-declining'. Key observations: educational gaps, Employment gaps detected, missing profile details. Overall suitability: Needs further review.",
+      "email_draft": "Dear Candidate for the Post of Assistant Professor - Electrical & Computer Engineering - SEECS (Apply Date: 20-Oct-2025 ),\n\nThank you for your application and interest in the position. During our profile review, we noticed a few details are missing or unclear in your CV:\n\n- SSE marks/CGPA\n- UG marks/CGPA\n- Experience duration (start/end date)\n- Publication details\n\nPlease share an updated CV (PDF) with the above details so we can complete your assessment.\nIf any item is not applicable, kindly mention that explicitly in your response.\n\nBest regards,\nRecruitment Team\nTALASH",
+      "raw_text_path": "/home/spark/NUST/Semester 6/Large Language Models/Project/data/output/raw_text/cv_3_muhammad_shahwaz_p911.txt"
+    }
+  ],
+  "failed_files": []
+}
