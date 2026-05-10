@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import INPUT_DIR, M2_RESULTS_JSON, OUTPUT_DIR, ensure_directories
 from app.ingestion import list_pdf_files
-from app.m2_service import process_candidates_from_pdfs
+from app.analysis_service import process_candidates_from_pdfs
 from app.processor import process_pdf_batch
 from app.reporting import build_preprocessing_report
 from app.schemas import IngestResponse, ProcessResponse, ReportResponse
@@ -87,7 +87,7 @@ def results_report() -> ReportResponse:
     return ReportResponse(**report)
 
 
-@app.post("/m2/ingest")
+@app.post("/api/ingest")
 async def ingest_multiple_cvs(files: list[UploadFile] = File(...)) -> dict:
     saved_files: list[str] = []
     rejected_files: list[str] = []
@@ -112,8 +112,8 @@ async def ingest_multiple_cvs(files: list[UploadFile] = File(...)) -> dict:
     }
 
 
-@app.post("/m2/process/all")
-def process_m2_all() -> dict:
+@app.post("/api/process/all")
+def process_api_all() -> dict:
     pdfs = list_pdf_files(INPUT_DIR)
     if not pdfs:
         raise HTTPException(status_code=400, detail="No PDFs found in data/input")
@@ -121,8 +121,8 @@ def process_m2_all() -> dict:
     return process_candidates_from_pdfs(pdfs)
 
 
-@app.post("/m2/upload-and-process")
-async def m2_upload_and_process(files: list[UploadFile] = File(...)) -> dict:
+@app.post("/api/upload-and-process")
+async def api_upload_and_process(files: list[UploadFile] = File(...)) -> dict:
     uploaded_pdfs: list[Path] = []
 
     for file in files:
@@ -136,16 +136,16 @@ async def m2_upload_and_process(files: list[UploadFile] = File(...)) -> dict:
     return process_candidates_from_pdfs(uploaded_pdfs)
 
 
-@app.get("/m2/results/latest")
-def m2_results_latest() -> dict:
+@app.get("/api/results/latest")
+def api_results_latest() -> dict:
     if not M2_RESULTS_JSON.exists():
         raise HTTPException(status_code=404, detail="Milestone 2 results not generated yet")
 
     return json.loads(M2_RESULTS_JSON.read_text(encoding="utf-8"))
 
 
-@app.get("/m2/dashboard")
-def m2_dashboard() -> dict:
+@app.get("/api/dashboard")
+def api_dashboard() -> dict:
     if not M2_RESULTS_JSON.exists():
         raise HTTPException(status_code=404, detail="Milestone 2 results not generated yet")
 
@@ -167,8 +167,8 @@ def m2_dashboard() -> dict:
             {
                 "name": name,
                 "education_score": education_score,
-                "experience_summary": \
-candidate.get("experience_analysis", {}).get("career_progression", "undetermined"),
+                "experience_summary": candidate.get("experience_analysis", {}).get("career_progression", "undetermined"),
+                "ranking_score": candidate.get("ranking_score", 0),
                 "missing_info_flag": missing_count > 0,
             }
         )
@@ -184,3 +184,27 @@ candidate.get("experience_analysis", {}).get("career_progression", "undetermined
             "missing_info_count": missing_info_count,
         },
     }
+
+from pydantic import BaseModel
+class RankingWeights(BaseModel):
+    education: float
+    experience: float
+    research: float
+    skills: float
+
+@app.post("/api/rank")
+def api_rank_candidates(weights: RankingWeights) -> dict:
+    if not M2_RESULTS_JSON.exists():
+        raise HTTPException(status_code=404, detail="Results not generated yet")
+    
+    payload = json.loads(M2_RESULTS_JSON.read_text(encoding="utf-8"))
+    candidates = payload.get("candidates", [])
+    
+    from app.analysis_service import calculate_ranking_score
+    for candidate in candidates:
+        structured = candidate.get("structured_data", {})
+        score = calculate_ranking_score(structured, weights.dict())
+        candidate["ranking_score"] = score
+        
+    candidates.sort(key=lambda x: x.get("ranking_score", 0), reverse=True)
+    return {"candidates": candidates}
