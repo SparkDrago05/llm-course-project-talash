@@ -2,6 +2,145 @@ import { useMemo, useState, useRef } from "react";
 
 const API_BASE = "http://127.0.0.1:8000";
 
+const RADAR_AXES = [
+  { key: "education", label: "Education" },
+  { key: "experience", label: "Experience" },
+  { key: "research", label: "Research" },
+  { key: "topic", label: "Topic Breadth" },
+  { key: "skill", label: "Skill Alignment" },
+  { key: "m3", label: "M3 Signal" },
+];
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function normalizeCandidate(candidate) {
+  const education = clamp(candidate.education_analysis?.average_score ?? 0, 0, 100);
+  const experience = clamp(((candidate.experience_analysis?.experience_duration_years ?? 0) / 20) * 100, 0, 100);
+  const research = clamp(((candidate.structured_data?.publications?.length ?? 0) / 30) * 100, 0, 100);
+  const topic = clamp(candidate.topic_variability?.variability_score ?? 0, 0, 100);
+  const skill = clamp(candidate.skill_alignment?.alignment_score ?? 0, 0, 100);
+  const m3 = clamp((topic * 0.4) + ((candidate.coauthor_analysis?.collaboration_diversity_score ?? 0) * 0.4) + (skill * 0.2), 0, 100);
+
+  return { education, experience, research, topic, skill, m3 };
+}
+
+function RadarChart({ candidate }) {
+  const size = 320;
+  const center = size / 2;
+  const radius = 112;
+  const normalized = normalizeCandidate(candidate);
+
+  const points = RADAR_AXES.map((axis, index) => {
+    const angle = (-Math.PI / 2) + ((Math.PI * 2) * index) / RADAR_AXES.length;
+    const value = normalized[axis.key] / 100;
+    const x = center + Math.cos(angle) * radius * value;
+    const y = center + Math.sin(angle) * radius * value;
+    return { x, y };
+  });
+
+  return (
+    <div className="card radar-card">
+      <div className="chart-card-header">
+        <h3><span>🛰️</span> Candidate Profile Radar</h3>
+        <span className="chart-subtitle">A compact multi-signal fingerprint</span>
+      </div>
+      <div className="radar-wrap">
+        <svg viewBox={`0 0 ${size} ${size}`} className="radar-svg" aria-label="Candidate radar chart">
+          {[0.25, 0.5, 0.75, 1].map((scale) => (
+            <polygon
+              key={scale}
+              points={RADAR_AXES.map((_, index) => {
+                const angle = (-Math.PI / 2) + ((Math.PI * 2) * index) / RADAR_AXES.length;
+                const x = center + Math.cos(angle) * radius * scale;
+                const y = center + Math.sin(angle) * radius * scale;
+                return `${x},${y}`;
+              }).join(" ")}
+              className="radar-grid"
+            />
+          ))}
+
+          {RADAR_AXES.map((axis, index) => {
+            const angle = (-Math.PI / 2) + ((Math.PI * 2) * index) / RADAR_AXES.length;
+            const x = center + Math.cos(angle) * radius;
+            const y = center + Math.sin(angle) * radius;
+            return (
+              <g key={axis.key}>
+                <line x1={center} y1={center} x2={x} y2={y} className="radar-axis" />
+                <text x={center + Math.cos(angle) * (radius + 24)} y={center + Math.sin(angle) * (radius + 24)} className="radar-label">
+                  {axis.label}
+                </text>
+              </g>
+            );
+          })}
+
+          <polygon points={points.map((point) => `${point.x},${point.y}`).join(" ")} className="radar-fill" />
+          <polygon points={points.map((point) => `${point.x},${point.y}`).join(" ")} className="radar-outline" />
+          {points.map((point, index) => (
+            <circle key={index} cx={point.x} cy={point.y} r="4" className="radar-point" />
+          ))}
+        </svg>
+
+        <div className="radar-metrics">
+          <div><strong>Education:</strong> {normalized.education.toFixed(0)}</div>
+          <div><strong>Experience:</strong> {normalized.experience.toFixed(0)}</div>
+          <div><strong>Research:</strong> {normalized.research.toFixed(0)}</div>
+          <div><strong>Topic Breadth:</strong> {normalized.topic.toFixed(0)}</div>
+          <div><strong>Skill Alignment:</strong> {normalized.skill.toFixed(0)}</div>
+          <div><strong>M3 Signal:</strong> {normalized.m3.toFixed(0)}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RankingCompositionChart({ candidate, weights }) {
+  const normalized = normalizeCandidate(candidate);
+  const segments = [
+    { key: "education", label: "Education", weight: weights.education, value: normalized.education, color: "var(--primary)" },
+    { key: "experience", label: "Experience", weight: weights.experience, value: normalized.experience, color: "var(--accent)" },
+    { key: "research", label: "Research", weight: weights.research, value: normalized.research, color: "var(--secondary)" },
+    { key: "skills", label: "Skills", weight: weights.skills, value: normalized.skill, color: "#f59e0b" },
+    { key: "m3", label: "M3", weight: weights.m3, value: normalized.m3, color: "#22c55e" },
+  ];
+
+  const total = segments.reduce((sum, segment) => sum + (segment.weight * segment.value), 0) || 1;
+
+  return (
+    <div className="card">
+      <div className="chart-card-header">
+        <h3><span>🧱</span> Ranking Composition</h3>
+        <span className="chart-subtitle">Weighted score footprint</span>
+      </div>
+      <div className="composition-card">
+        <div className="composition-bar">
+          {segments.map((segment) => {
+            const width = Math.max(((segment.weight * segment.value) / total) * 100, 4);
+            return (
+              <div
+                key={segment.key}
+                className="composition-segment"
+                style={{ width: `${width}%`, background: segment.color }}
+                title={`${segment.label}: ${segment.value.toFixed(1)} • weight ${segment.weight}`}
+              />
+            );
+          })}
+        </div>
+        <div className="composition-legend">
+          {segments.map((segment) => (
+            <div key={segment.key} className="composition-item">
+              <span className="composition-dot" style={{ background: segment.color }} />
+              <span>{segment.label}</span>
+              <strong>{(segment.weight * segment.value).toFixed(1)}</strong>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Modal({ title, onClose, children }) {
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -59,10 +198,11 @@ export default function App() {
   const fileInputRef = useRef(null);
   
   const [weights, setWeights] = useState({
-    education: 0.3,
+    education: 0.25,
     experience: 0.2,
-    research: 0.4,
-    skills: 0.1,
+    research: 0.3,
+    skills: 0.15,
+    m3: 0.1,
   });
 
   const candidates = useMemo(() => payload?.candidates || [], [payload]);
@@ -133,6 +273,18 @@ export default function App() {
     count: candidate.structured_data?.publications?.length ?? 0,
   }));
 
+  const chartTopicVariability = candidates.map((candidate) => ({
+    name: candidate.name,
+    score: candidate.topic_variability?.variability_score ?? 0,
+  }));
+
+  const chartSkillAlignment = candidates.map((candidate) => ({
+    name: candidate.name,
+    score: candidate.skill_alignment?.alignment_score ?? 0,
+  }));
+
+  const selectedCandidateProfile = selectedCandidate ? normalizeCandidate(selectedCandidate) : null;
+
   return (
     <div className="container">
       <header style={{ marginBottom: '40px' }}>
@@ -196,13 +348,15 @@ export default function App() {
               <th>Education</th>
               <th>Experience</th>
               <th>Research</th>
+              <th>Topic Diversity</th>
+              <th>Skill Alignment</th>
               <th>Alerts</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {candidates.length === 0 ? (
-              <tr><td colSpan="8" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>No candidates analyzed yet.</td></tr>
+              <tr><td colSpan="10" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>No candidates analyzed yet.</td></tr>
             ) : (
               candidates.map((candidate, index) => (
                 <tr key={candidate.personal_info?.candidate_id || candidate.name}>
@@ -215,6 +369,8 @@ export default function App() {
                   <td>{candidate.education_analysis?.average_score ?? 0}%</td>
                   <td><span className="badge badge-warning">{candidate.experience_analysis?.career_progression ?? "N/A"}</span></td>
                   <td>{candidate.structured_data?.publications?.length ?? 0} Pubs</td>
+                  <td>{candidate.topic_variability?.variability_score ?? 0}</td>
+                  <td>{candidate.skill_alignment?.alignment_score ?? 0}</td>
                   <td>
                     {(candidate.missing_info || []).length > 0 ? (
                       <div className="tooltip-container">
@@ -247,6 +403,15 @@ export default function App() {
           <SimpleBarChart title="Academic Performance" icon="🎓" data={chartEducation} valueKey="score" color="var(--primary)" />
           <SimpleBarChart title="Professional Tenure (Years)" icon="💼" data={chartExperience} valueKey="years" color="var(--accent)" />
           <SimpleBarChart title="Research Productivity" icon="🔬" data={chartResearch} valueKey="count" color="var(--secondary)" />
+          <SimpleBarChart title="Topic Variability" icon="🧭" data={chartTopicVariability} valueKey="score" color="#22c55e" />
+          <SimpleBarChart title="Skill Evidence Alignment" icon="🧩" data={chartSkillAlignment} valueKey="score" color="#f59e0b" />
+        </div>
+      )}
+
+      {selectedCandidate && (
+        <div className="chart-grid chart-grid-wide">
+          <RadarChart candidate={selectedCandidate} />
+          <RankingCompositionChart candidate={selectedCandidate} weights={weights} />
         </div>
       )}
 
@@ -290,12 +455,17 @@ export default function App() {
             <div className="detail-section">
               <h4>Research & Publications</h4>
               <p>Total Publications: {selectedCandidate.structured_data?.publications?.length}</p>
+              <p><strong>Research Quality:</strong> {selectedCandidate.research_quality?.quality_signal || "N/A"}</p>
+              <p><strong>Topic Variability:</strong> {selectedCandidate.topic_variability?.variability_score ?? 0}</p>
+              <p><strong>Dominant Topic:</strong> {selectedCandidate.topic_variability?.dominant_topic || "N/A"}</p>
+              <p><strong>Unique Co-authors:</strong> {selectedCandidate.coauthor_analysis?.unique_coauthors ?? 0}</p>
               <div className="pub-list">
                 {selectedCandidate.structured_data?.publications?.slice(0, 10).map((p, i) => (
                   <div key={i} className="pub-item">
                     <span>{p.type === 'journal' ? '📓' : '📄'}</span>
                     <div>
                       <strong>{p.title}</strong>
+                      <div style={{ color: 'var(--text-muted)' }}>Role: {p.candidate_authorship_role || 'unknown'}</div>
                       {p.api_info?.inferred_quartile && <span className={`q-badge ${p.api_info.inferred_quartile.toLowerCase()}`}>{p.api_info.inferred_quartile}</span>}
                     </div>
                   </div>
@@ -303,6 +473,34 @@ export default function App() {
                 {selectedCandidate.structured_data?.publications?.length > 10 && <p>...and {selectedCandidate.structured_data.publications.length - 10} more.</p>}
               </div>
             </div>
+
+            <div className="detail-grid">
+              <div className="detail-section">
+                <h4>Supervision, Books & Patents</h4>
+                <p><strong>Students Supervised:</strong> {selectedCandidate.supervision_analysis?.total_supervised_students ?? 0}</p>
+                <p><strong>Main Supervisor:</strong> {selectedCandidate.supervision_analysis?.main_supervisor_count ?? 0}</p>
+                <p><strong>Co-Supervisor:</strong> {selectedCandidate.supervision_analysis?.co_supervisor_count ?? 0}</p>
+                <p><strong>Books:</strong> {selectedCandidate.books_analysis?.total_books ?? 0}</p>
+                <p><strong>Patents:</strong> {selectedCandidate.patents_analysis?.total_patents ?? 0}</p>
+              </div>
+              <div className="detail-section">
+                <h4>Skill Alignment Evidence</h4>
+                <p><strong>Alignment Score:</strong> {selectedCandidate.skill_alignment?.alignment_score ?? 0}</p>
+                <p><strong>Strongly Evidenced:</strong> {(selectedCandidate.skill_alignment?.strongly_evidenced || []).join(', ') || 'None'}</p>
+                <p><strong>Partially Evidenced:</strong> {(selectedCandidate.skill_alignment?.partially_evidenced || []).join(', ') || 'None'}</p>
+                <p><strong>Unsupported:</strong> {(selectedCandidate.skill_alignment?.unsupported || []).join(', ') || 'None'}</p>
+              </div>
+            </div>
+
+            {selectedCandidateProfile && (
+              <div className="radar-summary">
+                <div className="summary-pill">Education {selectedCandidateProfile.education.toFixed(0)}</div>
+                <div className="summary-pill">Experience {selectedCandidateProfile.experience.toFixed(0)}</div>
+                <div className="summary-pill">Research {selectedCandidateProfile.research.toFixed(0)}</div>
+                <div className="summary-pill">Topic {selectedCandidateProfile.topic.toFixed(0)}</div>
+                <div className="summary-pill">M3 {selectedCandidateProfile.m3.toFixed(0)}</div>
+              </div>
+            )}
           </div>
         </Modal>
       )}
