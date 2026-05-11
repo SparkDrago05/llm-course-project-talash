@@ -12,7 +12,7 @@ from app.schemas import IngestResponse, ProcessResponse, ReportResponse
 from app.storage import write_outputs
 
 
-app = FastAPI(title="TALASH Milestone 1 API", version="0.1.0")
+app = FastAPI(title="TALASH Milestone 3 API", version="0.3.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -156,12 +156,18 @@ def api_dashboard() -> dict:
     education_score_comparison = []
     experience_duration = []
     missing_info_count = []
+    topic_variability_scores = []
+    coauthor_diversity_scores = []
+    skill_alignment_scores = []
 
     for candidate in candidates:
         name = candidate.get("name", "Unknown")
         education_score = candidate.get("education_analysis", {}).get("average_score", 0)
         experience_years = candidate.get("experience_analysis", {}).get("experience_duration_years", 0)
         missing_count = len(candidate.get("missing_info", []))
+        topic_variability = candidate.get("topic_variability", {}).get("variability_score", 0)
+        coauthor_diversity = candidate.get("coauthor_analysis", {}).get("collaboration_diversity_score", 0)
+        skill_alignment = candidate.get("skill_alignment", {}).get("alignment_score", 0)
 
         table.append(
             {
@@ -175,6 +181,9 @@ def api_dashboard() -> dict:
         education_score_comparison.append({"name": name, "score": education_score})
         experience_duration.append({"name": name, "years": experience_years})
         missing_info_count.append({"name": name, "count": missing_count})
+        topic_variability_scores.append({"name": name, "score": topic_variability})
+        coauthor_diversity_scores.append({"name": name, "score": coauthor_diversity})
+        skill_alignment_scores.append({"name": name, "score": skill_alignment})
 
     return {
         "table": table,
@@ -182,6 +191,9 @@ def api_dashboard() -> dict:
             "education_score_comparison": education_score_comparison,
             "experience_duration": experience_duration,
             "missing_info_count": missing_info_count,
+            "topic_variability": topic_variability_scores,
+            "coauthor_diversity": coauthor_diversity_scores,
+            "skill_alignment": skill_alignment_scores,
         },
     }
 
@@ -191,6 +203,7 @@ class RankingWeights(BaseModel):
     experience: float
     research: float
     skills: float
+    m3: float = 0.1
 
 @app.post("/api/rank")
 def api_rank_candidates(weights: RankingWeights) -> dict:

@@ -1,16 +1,22 @@
-# TALASH - Milestone 2 (Intermediate)
+# TALASH - Milestone 3 (Integrated)
 
-This repository contains the Milestone 2 implementation for TALASH (Smart HR Recruitment) for CS417 LLMs.
+This repository contains the integrated Milestone 3 implementation for TALASH (Smart HR Recruitment) for CS417 LLMs.
 
-## Scope Covered (Milestone 2)
+## Scope Covered (Milestone 3)
 - Multi-CV PDF ingestion pipeline (folder + upload)
 - Raw text extraction and storage per candidate
 - Structured extraction for personal info, education, experience, skills, and publications
 - Educational profile and professional timeline analysis
 - Missing-information detection + personalized email draft generation
-- Initial candidate summary generation
-- Partial research profile (title extraction, count, basic type classification)
-- Intermediate web UI (upload, candidate table, basic charts)
+- Candidate summary generation
+- Research profile enrichment (indexed signal, quartile heuristic, authorship role)
+- Topic variability analysis (dominant topic, diversity score, trend)
+- Co-author collaboration analysis (network size, recurring collaborations, diversity score)
+- Supervision analysis (main/co-supervisor counts, student-linked publication signals)
+- Books and patents extraction with role interpretation
+- Skill alignment analysis (strong/partial/weak/unsupported evidence)
+- Quantifiable weighted candidate ranking with configurable M3 contribution
+- Web UI dashboard with comparative charts for M3 metrics
 
 ## Quick Start
 1. Create and activate a virtual environment.
@@ -54,7 +60,7 @@ Minimal syntax check:
 python -m py_compile app/*.py tests/*.py
 ```
 
-## Milestone 2 Output Format
+## Milestone 3 Output Format
 Each candidate includes the required fields:
 
 ```json
@@ -62,13 +68,21 @@ Each candidate includes the required fields:
    "name": "",
    "education_analysis": {"...": "..."},
    "experience_analysis": {"...": "..."},
+   "research_quality": {"...": "..."},
+   "topic_variability": {"...": "..."},
+   "coauthor_analysis": {"...": "..."},
+   "supervision_analysis": {"...": "..."},
+   "books_analysis": {"...": "..."},
+   "patents_analysis": {"...": "..."},
+   "skill_alignment": {"...": "..."},
+   "ranking_score": 0,
    "missing_info": [],
    "summary": "",
    "email_draft": ""
 }
 ```
 
-Additional supporting fields are included (`personal_info`, `structured_data`, `research_profile`, `raw_text_path`) to make Milestone 3 extension easier.
+Additional supporting fields are included (`personal_info`, `structured_data`, `research_profile`, `raw_text_path`) for traceability.
 
 ## Frontend (Sample Intermediate UI)
 The sample frontend is under `frontend/` and uses React + Vite.

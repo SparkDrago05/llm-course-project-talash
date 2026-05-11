@@ -11,6 +11,9 @@ CGPA_RE = re.compile(r"(\d(?:\.\d{1,2})?)\s*/\s*(\d(?:\.\d{1,2})?)")
 PERCENT_RE = re.compile(r"(\d{2,3}(?:\.\d{1,2})?)\s*%")
 STANDALONE_CGPA_RE = re.compile(r"\b([23]\.\d{1,2}|4\.0)\b")
 STANDALONE_PERCENT_RE = re.compile(r"\b([4-9]\d(?:\.\d{1,2})?|100)\b")
+ISBN_RE = re.compile(r"(?:ISBN(?:-1[03])?:?\s*)?((?:97[89][\-\s]?)?[\d\-\s]{9,17}[\dxX])")
+PATENT_NO_RE = re.compile(r"\b(?:[A-Z]{1,3}\d{4,}|\d{6,})\b")
+URL_RE = re.compile(r"https?://\S+")
 
 
 SECTION_HINTS = {
@@ -215,7 +218,25 @@ def lookup_openalex_venue(query: str) -> dict:
     return {"is_indexed": False, "inferred_quartile": "Unknown"}
 
 
-def _extract_publications(lines: list[str]) -> list[dict[str, Any]]:
+def _author_role(authors: list[str], candidate_name: str, text: str) -> str:
+    candidate_lower = candidate_name.lower().strip()
+    normalized = [author.lower().strip() for author in authors if author.strip()]
+    corresponding_flag = "correspond" in text.lower() or "*" in text
+
+    if not normalized:
+        return "unknown"
+    if normalized[0] == candidate_lower and corresponding_flag:
+        return "first_and_corresponding"
+    if normalized[0] == candidate_lower:
+        return "first"
+    if candidate_lower in normalized and corresponding_flag:
+        return "corresponding"
+    if candidate_lower in normalized:
+        return "co-author"
+    return "unknown"
+
+
+def _extract_publications(lines: list[str], candidate_name: str) -> list[dict[str, Any]]:
     publications: list[dict[str, Any]] = []
     for line in lines:
         cleaned = line.strip("-• ")
@@ -247,12 +268,15 @@ def _extract_publications(lines: list[str]) -> list[dict[str, Any]]:
         authors_part = cleaned.split(".")[0] if "." in cleaned else ""
         authors = [a.strip() for a in authors_part.split(",") if len(a) > 3]
 
+        candidate_role = _author_role(authors, candidate_name, cleaned)
+
         publications.append(
             {
                 "title": cleaned,
                 "year": year,
                 "type": pub_type,
                 "authors": authors,
+                "candidate_authorship_role": candidate_role,
                 "api_info": api_info,
                 "raw": line,
             }
@@ -261,28 +285,94 @@ def _extract_publications(lines: list[str]) -> list[dict[str, Any]]:
 
 
 def _extract_supervision(lines: list[str]) -> list[dict[str, Any]]:
-    # Extract MS / PhD supervision
     supervision = []
     for line in lines:
-        if len(line) < 5: continue
-        level = "MS" if "ms" in line.lower() or "master" in line.lower() else "PhD" if "phd" in line.lower() else "Unknown"
-        supervision.append({"level": level, "raw": line})
+        if len(line) < 5:
+            continue
+        lowered = line.lower()
+        level = "MS" if "ms" in lowered or "master" in lowered or "mphil" in lowered else "PhD" if "phd" in lowered else "Unknown"
+        role = "co-supervisor" if "co-supervisor" in lowered or "co supervisor" in lowered else "main-supervisor" if "supervisor" in lowered else "unspecified"
+        year_match = YEAR_RE.search(line)
+        student = re.split(r"[-,:;]", line)[0].strip()
+        supervision.append(
+            {
+                "student": student,
+                "level": level,
+                "role": role,
+                "graduation_year": int(year_match.group(0)) if year_match else None,
+                "raw": line,
+            }
+        )
     return supervision
 
 
 def _extract_books(lines: list[str]) -> list[dict[str, Any]]:
     books = []
     for line in lines:
-        if len(line) < 5: continue
-        books.append({"raw": line})
+        if len(line) < 5:
+            continue
+        isbn_match = ISBN_RE.search(line)
+        year_match = YEAR_RE.search(line)
+        url_match = URL_RE.search(line)
+
+        parts = [part.strip() for part in re.split(r"\||;", line) if part.strip()]
+        title = parts[0] if parts else line
+        publisher = ""
+        if len(parts) > 1:
+            publisher = parts[1]
+        elif "springer" in line.lower():
+            publisher = "Springer"
+        elif "ieee" in line.lower():
+            publisher = "IEEE"
+
+        authors = []
+        if "," in title:
+            authors = [item.strip() for item in title.split(",")[:-1] if item.strip()]
+
+        books.append(
+            {
+                "title": title,
+                "authors": authors,
+                "isbn": isbn_match.group(1).strip() if isbn_match else "",
+                "publisher": publisher,
+                "publishing_year": int(year_match.group(0)) if year_match else None,
+                "online_link": url_match.group(0) if url_match else "",
+                "raw": line,
+            }
+        )
     return books
 
 
 def _extract_patents(lines: list[str]) -> list[dict[str, Any]]:
     patents = []
     for line in lines:
-        if len(line) < 5: continue
-        patents.append({"raw": line})
+        if len(line) < 5:
+            continue
+        number_match = PATENT_NO_RE.search(line)
+        year_match = YEAR_RE.search(line)
+        url_match = URL_RE.search(line)
+
+        parts = [part.strip() for part in re.split(r"\||;", line) if part.strip()]
+        title = parts[0] if parts else line
+        inventors = [item.strip() for item in re.split(r",| and ", line) if len(item.strip()) > 3][:4]
+
+        country = ""
+        for token in ["pakistan", "usa", "uk", "china", "germany", "uae"]:
+            if token in line.lower():
+                country = token.upper()
+                break
+
+        patents.append(
+            {
+                "patent_number": number_match.group(0) if number_match else "",
+                "title": title,
+                "date": int(year_match.group(0)) if year_match else None,
+                "inventors": inventors,
+                "country": country,
+                "online_link": url_match.group(0) if url_match else "",
+                "raw": line,
+            }
+        )
     return patents
 
 
@@ -302,7 +392,7 @@ def parse_cv_structured(pdf_path: Path, text: str) -> dict[str, Any]:
     education = _extract_education(sections["education"])
     experience = _extract_experience(sections["experience"])
     skills = _extract_skills(sections["skills"], text)
-    publications = _extract_publications(sections["publications"])
+    publications = _extract_publications(sections["publications"], personal_info["name"])
     supervision = _extract_supervision(sections["supervision"])
     books = _extract_books(sections["books"])
     patents = _extract_patents(sections["patents"])

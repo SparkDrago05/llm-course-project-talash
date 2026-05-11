@@ -200,6 +200,9 @@ def detect_missing_information(candidate: dict[str, Any]) -> list[str]:
     education = candidate.get("education", [])
     experience = candidate.get("experience", [])
     publications = candidate.get("publications", [])
+    supervision = candidate.get("supervision", [])
+    books = candidate.get("books", [])
+    patents = candidate.get("patents", [])
 
     for level in ["SSE", "HSSC", "UG", "PG"]:
         level_items = [item for item in education if item.get("level") == level]
@@ -217,6 +220,32 @@ def detect_missing_information(candidate: dict[str, Any]) -> list[str]:
         missing.append("Publication details")
     elif any(not item.get("title") for item in publications):
         missing.append("Publication title")
+    else:
+        if any(not item.get("year") for item in publications):
+            missing.append("Publication year")
+        if any(not item.get("authors") for item in publications):
+            missing.append("Publication authorship")
+        if any(item.get("type") == "unknown" for item in publications):
+            missing.append("Publication venue/type clarity")
+
+    if supervision and any(not item.get("level") or not item.get("student") for item in supervision):
+        missing.append("Supervision details (student/level)")
+
+    if books:
+        if any(not item.get("title") for item in books):
+            missing.append("Book title")
+        if any(not item.get("publisher") for item in books):
+            missing.append("Book publisher")
+        if any(not item.get("isbn") for item in books):
+            missing.append("Book ISBN")
+
+    if patents:
+        if any(not item.get("patent_number") for item in patents):
+            missing.append("Patent number")
+        if any(not item.get("inventors") for item in patents):
+            missing.append("Patent inventors")
+        if any(not item.get("country") for item in patents):
+            missing.append("Patent country")
 
     unique_missing: list[str] = []
     for field in missing:
